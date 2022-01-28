@@ -18,20 +18,31 @@ if (document.querySelector('.projects .swiper')) {
   });
 }
 
-/* #Sticky Btn
+/* #Popup Contact
   ======================================================= */
-const stickyBtn = document.querySelector('.sticky-btn');
-const bannerContact = document.querySelector('.banner-contact');
-const popupClose = document.querySelector('.popup-close');
+const popupContactTogglers = document.querySelectorAll('.popup-contact-toggler');
+const popupContact = document.querySelector('.popup-contact');
+const popupContactClose = document.querySelector('.popup-contact .popup-close');
 
-stickyBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  body.classList.add('no-scroll');
-  bannerContact.classList.add('show');
+popupContactTogglers.forEach((toggler) => {
+  toggler.addEventListener('click', (e) => {
+    e.preventDefault();
+    body.classList.add('no-scroll');
+    popupContact.classList.add('show');
+  });
 });
 
-popupClose.addEventListener('click', (e) => {
-  e.preventDefault();
-  body.classList.remove('no-scroll');
-  bannerContact.classList.remove('show');
+/* #Popup Thanks
+  ======================================================= */
+const popupThanksTogglers = document.querySelectorAll('.popup-thanks-toggler');
+const popupThanks = document.querySelector('.popup-thanks');
+const popupThanksClose = document.querySelector('.popup-thanks .popup-close');
+
+popupThanksTogglers.forEach((toggler) => {
+  toggler.addEventListener('click', (e) => {
+    e.preventDefault();
+    body.classList.add('no-scroll');
+    popupThanks.classList.add('show');
+    popupContact.classList.remove('show');
+  });
 });
